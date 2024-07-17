@@ -1,0 +1,13 @@
+﻿@{
+    ViewData["Title"] = "Validate";
+
+}
+@if (ViewBag.Success=true)
+{
+    <h1 class="text-success">پرداخت موفق</h1>
+    <h2>کد پیگیری:@ViewBag.refId</h2>
+}
+else
+{
+    <h1 class="text-danger">پرداخت ناموفق</h1>
+}

@@ -1,0 +1,67 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout_admin_.cshtml";
+}
+@section pre{
+    <style>
+        #btn {
+            margin-top: 67px;
+            margin-left: 450px;
+        }
+        .hvr-sweep-to-right::before {
+            background-color: red !important;
+        }
+    </style>
+    <link href="~/css1/css/hover.css" rel="stylesheet">
+    <link href="~/css1/fontawesome.css" rel="stylesheet" />
+
+}
+<div class="row">
+    <form asp-action="search" asp-controller="course" method="get">
+
+        <div class="input-field col s6">
+            <i class="material-icons prefix">search</i>
+            <input name="s" id="icon_prefix3" type="text" class="validate">
+            <label class="contact-input" for="icon_prefix3">جستجو</label>
+        </div>
+
+        <button id="btn" type="submit" class="waves-effect waves-light btn mb-1 btn hvr-sweep-to-right">
+            <i class="material-icons right">search</i> جستجو
+        </button>
+    </form>
+</div>
+<div id="view-borderless-table">
+    <div class="row">
+        <div class="col s12">
+            <table>
+                <thead>
+                    <tr>
+                        <th data-field="id">عنوان</th>
+                        <th data-field="name">ساعت</th>
+                        <th data-field="price">قیمت</th>
+                        <th data-field="price">ویرایش</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (BE.course item in ViewBag.courses)
+                    {
+                        <tr>
+                            <td>@item.title</td>
+                            <td>@item.totaltime</td>
+                            <td>@item.price</td>
+                            <td>
+                                <a asp-action="edit" asp-controller="course" asp-route-id="@item.id" metod class="waves-effect waves-light btn mb-1" style="background-color:darkgoldenrod">
+                                    <i class="material-icons right">edit</i> ویرایش
+                                </a>
+                            </td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    @section script{
+        <script src="~/js1/all.js"></script>
+    }
+</div>

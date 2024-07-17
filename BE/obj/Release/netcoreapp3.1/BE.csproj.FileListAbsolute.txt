@@ -1,0 +1,9 @@
+D:\Users\PGSHCO\source\repos\product (easy learn)\BE\bin\Release\netcoreapp3.1\BE.deps.json
+D:\Users\PGSHCO\source\repos\product (easy learn)\BE\bin\Release\netcoreapp3.1\BE.dll
+D:\Users\PGSHCO\source\repos\product (easy learn)\BE\bin\Release\netcoreapp3.1\BE.pdb
+D:\Users\PGSHCO\source\repos\product (easy learn)\BE\obj\Release\netcoreapp3.1\BE.csprojAssemblyReference.cache
+D:\Users\PGSHCO\source\repos\product (easy learn)\BE\obj\Release\netcoreapp3.1\BE.AssemblyInfoInputs.cache
+D:\Users\PGSHCO\source\repos\product (easy learn)\BE\obj\Release\netcoreapp3.1\BE.AssemblyInfo.cs
+D:\Users\PGSHCO\source\repos\product (easy learn)\BE\obj\Release\netcoreapp3.1\BE.csproj.CoreCompileInputs.cache
+D:\Users\PGSHCO\source\repos\product (easy learn)\BE\obj\Release\netcoreapp3.1\BE.dll
+D:\Users\PGSHCO\source\repos\product (easy learn)\BE\obj\Release\netcoreapp3.1\BE.pdb

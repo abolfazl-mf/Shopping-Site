@@ -1,0 +1,352 @@
+﻿
+@{
+    ViewData["Title"] = "show teachers";
+    Layout = "~/Views/Shared/_Layout_admin_.cshtml";
+}
+@model List<BE.teacher>
+@section pre{
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta name="description" content="Materialize is a Material Design Admin Template,It's modern, responsive and based on Material Design by Google.">
+    <meta name="keywords" content="materialize, admin template, dashboard template, flat admin template, responsive admin template, eCommerce dashboard, analytic dashboard">
+    <meta name="author" content="ThemeSelect">
+    <title>متریالایز | الگوی منو شیب عمودی | جدول داده </title>
+    <link rel="apple-touch-icon" href="~/images/favicon/apple-touch-icon-152x152.png">
+    <link rel="shortcut icon" type="image/x-icon" href="~/images/favicon/favicon-32x32.png">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- BEGIN: VENDOR CSS-->
+    <link rel="stylesheet" type="text/css" href="~/vendors/vendors.min.css">
+    <link rel="stylesheet" type="text/css" href="~/vendors/flag-icon/css/flag-icon.min.css">
+    <link rel="stylesheet" type="text/css" href="~/vendors/data-tables/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="~/vendors/data-tables/extensions/responsive/css/responsive.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="~/vendors/data-tables/css/select.dataTables.min.css">
+    <!-- END: VENDOR CSS-->
+    <link rel="stylesheet" type="text/css" href="~/css-rtl/style-rtl.min.css">
+    <!-- BEGIN: Page Level CSS-->
+    <link rel="stylesheet" type="text/css" href="~/css-rtl/themes/vertical-gradient-menu-template/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="~/css-rtl/themes/vertical-gradient-menu-template/style.min.css">
+    <link rel="stylesheet" type="text/css" href="~/css/pages/data-tables.min.css">
+    <!-- END: Page Level CSS-->
+    <!-- BEGIN: Custom CSS-->
+    <link rel="stylesheet" type="text/css" href="~/css-rtl/custom/custom.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <style>
+        .dataTables_filter {
+            display: none;
+        }
+
+        .dataTables_length {
+            display: none;
+        }
+
+        .paginate_button current:hover {
+            background-color: skyblue !important;
+        }
+
+        #apage {
+            color: black;
+            margin-left: 12px;
+            font-size: 20px;
+        }
+
+            #apage:hover,
+            #apage:visited {
+                background-color: deepskyblue;
+                box-sizing: border-box;
+                border-radius: 7px;
+                border: 1px solid deepskyblue;
+                box-shadow: 0 0 13px deepskyblue;
+                padding-right: 8px;
+                padding-left: 8px;
+                padding-top: 5px;
+                padding-bottom: 5px;
+            }
+
+        #ab:hover,
+        #ab:double-button {
+            background-color: deepskyblue;
+            box-sizing: border-box;
+            border-radius: 7px;
+            border: 1px solid deepskyblue;
+            box-shadow: 0 0 13px deepskyblue;
+            padding-right: 8px;
+            padding-left: 8px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+
+        #an:hover,
+        #an:double-button {
+            background-color: deepskyblue;
+            box-sizing: border-box;
+            border-radius: 7px;
+            border: 1px solid deepskyblue;
+            box-shadow: 0 0 13px deepskyblue;
+            padding-right: 8px;
+            padding-left: 8px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            font-size: 20px;
+        }
+
+        
+
+       
+    </style>
+        }
+<div class="row">
+    <div class="col s12 m12 l12">
+        <div id="button-trigger" class="card card card-default scrollspy">
+            <div class="card-content">
+                <h4 class="card-title">هر اطلاعاتی نیاز داری در لیست زیر سرچ کن</h4>
+                <div class="chips chips-placeholder input-field"><input class="input" id="2a6e85e8-290a-e971-f1f0-33dfdedd33f0" placeholder="SEARCH"></div>
+                <a id="btn" class="mb-6 btn waves-effect waves-light gradient-45deg-light-blue-cyan btn-block">جستجو</a>
+                <div id="modal1" class="modal modal-fixed-footer">
+                    <div class="modal-content">
+                        <h۴>اطلاعات استاد</h۴>
+                        <div id="html-view-validations">
+                            <form asp-action="update" class="formValidate0" id="formedit" method="post" enctype="multipart/form-data">
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <label for="uname0"></label>
+                                        <input class="validate" required id="fn" name="name" type="text">
+                                    </div>
+                                    <div class="input-field col s12">
+                                        <label for="uname0"></label>
+                                        <input class="validate" required id="ln" name="family" type="text">
+                                    </div>
+                                    <div class="input-field col s12">
+                                        <label for="cemail0"></label>
+                                        <input class="validate" required id="em" type="email" name="email">
+                                    </div>
+                                    <div class="row">
+                                        <div class="input-field col s12">
+                                            <label class="contact-input" for="fn">عکس</label>
+                                            <input id="pic" type="file" name="picture">
+                                        </div>
+                                    </div>
+                                    @*modal-action modal-close*@
+                                    <div class="input-field col s12">
+                                        <button class="btn waves-effect waves-light right iransans" style="margin-top:50px" type="submit" name="action">
+                                            ویرایش
+                                            <i class="material-icons right">edit</i>
+                                        </button>
+
+                                    </div>
+
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row">
+                    <div class="col s12">
+
+                    </div>
+                    <div class="col s12">
+                        <table id="data-table-simple" class="display">
+                            <thead>
+                                <tr>
+                                    <th>نام</th>
+                                    <th>فامیل</th>
+                                    <th>ایمیل</th>
+                                    <th>تصویر</th>
+                                    <th>فرمان</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @{
+                                    foreach (var i in Model)
+                                    {
+                                        <tr role="row" class="odd">
+                                            <td style="display:none">@i.id</td>
+                                            <td tabindex="0" class="sorting_1">@i.name</td>
+                                            <td>@i.family</td>
+                                            <td>@i.email</td>
+                                            <td><img src="~/images/teacher/@i.picture" style="width:79px;height:74px;" /></td>
+                                            <td>
+                                                <a class="mb-6 btn-floating waves-effect waves-light purple lightrn-1 modal-trigger btt" href="#modal1"><i class="material-icons">open_in_new</i></a>
+                                            </td>
+                                        </tr>
+                                    }
+                                }
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th>نام</th>
+                                    <th>فامیل</th>
+                                    <th>ایمیل</th>
+                                    <th>تصویر</th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                        <div class="dataTables_paginate paging_simple_numbers" id="multi-select_paginate">
+                            @*<a class="paginate_button previous" aria-controls="data-table-simple" data-dt-idx="0" tabindex="0" id="data-table-simple_previous">قبلی</a>*@
+
+                            @* <a id="ab" class="paginate_button previous disabled" style="font-size: 20px; color: black; margin-left: 5px" aria-controls="multi-select" data-dt-idx="0" tabindex="-1">قبلی</a>*@
+                            @* <input type="button" onClick="history.go(-1)" value="بازگشت">*@
+
+                            @{
+                                BLL.blteacher bl = new BLL.blteacher();
+                                int f = bl.gettotal();
+                                int count;
+                                if (f % 10 == 0) count = f / 10;
+                                else count = (f / 10) + 1;
+                                var pageid = ViewBag.pageId;
+                                @*<a href="@Url.Action("getskip", "teacher", new {c=pageid - 1})">قبلی </a>
+                                for (var i = 0; i < count; i++)
+                                {
+
+                                    <a class="paginate_button active" id="apage" aria-controls="multi-select" data-dt-idx="@i" tabindex="0"
+                                       href=@Url.Action("getskip", "teacher", new { c = i })>@i</a>
+
+                                }
+                                <a href="@Url.Action("getskip", "teacher", new {c=pageid + 1})">بعدی </a>*@
+
+                                <div id="view-pagination" class="active">
+                                    <div class="row">
+                                        <div class="col s12">
+                                            <ul class="pagination">
+                                                @if (pageid > 0)
+                                                {
+                                                <li class="waves-effect">
+                                                    <a href="@Url.Action("getskip", "teacher", new {c=pageid - 1})">
+                                                        <i class="material-icons">chevron_left</i>
+                                                    </a>
+                                                </li>
+                                                }
+                                                
+                                                @for (var i = 0; i < count; i++)
+                                                {
+                                                    <li class="@(pageid==i?"active" :"")">
+                                                        <a href="@Url.Action("getskip", "teacher", new { c = i })">@i</a>
+                                                    </li>
+
+                                                }
+                                                <li class="waves-effect">
+                                                    <a href="@Url.Action("getskip", "teacher", new {c=pageid + 1})">
+                                                        <i class="material-icons">chevron_right</i>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                            @* <input type="button" onClick="history.go(2)" value="صفحه بعد ">*@
+                            @*<a id="ab" class="paginate_button next" style="font-size: 20px; color: black; margin-left: 5px" aria-controls="multi-select" data-dt-idx="0" tabindex="1">بعدی</a>*@
+                            @*<a class="paginate_button next" aria-controls="data-table-simple" data-dt-idx="0" tabindex="+1" id="data-table-simple_next">بعدی</a>*@
+
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Trigger -->
+<!-- Modal Structure -->
+
+
+
+@section script{
+    <!-- BEGIN VENDOR JS-->
+    <!-- BEGIN VENDOR JS-->
+    <!-- BEGIN PAGE VENDOR JS-->
+    <script src="~/vendors/data-tables/js/jquery.dataTables.min.js"></script>
+    <script src="~/vendors/data-tables/extensions/responsive/js/dataTables.responsive.min.js"></script>
+    <script src="~/vendors/data-tables/js/dataTables.select.min.js"></script>
+    <!-- END PAGE VENDOR JS-->
+    <!-- BEGIN THEME  JS-->
+    <script src="~/js/scripts/data-tables.min.js"></script>
+    <!--swal alert-->
+    <!--search-->
+    <script src="~/js/scripts/ui-chips.min.js"></script>
+
+    
+    <!--search-->
+    <script>
+            $(document).ready(function () {
+                var idd;
+                String.prototype.toEnglishDigits = function () {
+                    var num_dic = {
+                      '۰':'0',
+                      '۱':'1',
+                      '۲':'2',
+                      '۳':'3',
+                      '۴':'4',
+                      '۵':'5',
+                      '۶':'6',
+                      '۷':'7',
+                      '۸':'8',
+                      '۹':'9',
+                    }
+                    return parseInt(this.replace(/[۰-۹]/g, function (w) {
+                        return num_dic[w]
+                    }));
+                }
+                $("form#formedit").submit(function (e) {
+                    e.preventDefault();
+                    var formData = new FormData(this);
+                    formData.append("id", idd);
+
+                    $.ajax(
+                        {
+                            type: "post",
+                            enctype: "multipart/form-data",
+                            dataType: "json",
+                            url: "@Url.Action("update","teacher")",
+                            data: formData,
+                            contentType: false,
+                            processData: false,
+                            complete: function () {
+
+                                location.reload("show teachers/update");
+                                currentrow.find("td:eq(1)").text($("#fn").val());
+                                currentrow.find("td:eq(2)").text($("#ln").val());
+                                currentrow.find("td:eq(3)").text($("#em").val());
+
+                            }
+
+
+                        });
+
+
+                });
+
+                $(".btt").click(function () {
+                    var currentrow = $(this).closest("tr");
+                    idd = currentrow.find("td:eq(0)").text().toEnglishDigits();
+                    $("#fn").val(currentrow.find("td:eq(1)").text());
+                    $("#ln").val(currentrow.find("td:eq(2)").text());
+                    $("#em").val(currentrow.find("td:eq(3)").text());
+                });
+           $("#btn").click(function () {
+
+               $.ajax(
+                   {
+                       dataType: "json",
+                       contentType: "application/json;charse=utf-8",
+                       url: "@Url.Action("tsjson","teacher")",
+                       success: function (data) {
+                           window.location = data.redirect + "?" + 'tags=' + JSON.stringify(M.Chips.getInstance($('.chips')).chipsData);
+
+                       },
+
+                   });
+
+
+
+           });
+
+       });
+
+
+    </script>
+    <script src="~/js/scripts/advance-ui-modals.min.js"></script>
+}

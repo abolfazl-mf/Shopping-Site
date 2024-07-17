@@ -1,0 +1,15 @@
+D:\Users\PGSHCO\source\repos\product (easy learn)\DAL\bin\Release\netcoreapp3.1\DAL.deps.json
+D:\Users\PGSHCO\source\repos\product (easy learn)\DAL\bin\Release\netcoreapp3.1\DAL.runtimeconfig.json
+D:\Users\PGSHCO\source\repos\product (easy learn)\DAL\bin\Release\netcoreapp3.1\DAL.runtimeconfig.dev.json
+D:\Users\PGSHCO\source\repos\product (easy learn)\DAL\bin\Release\netcoreapp3.1\DAL.dll
+D:\Users\PGSHCO\source\repos\product (easy learn)\DAL\bin\Release\netcoreapp3.1\DAL.pdb
+D:\Users\PGSHCO\source\repos\product (easy learn)\DAL\bin\Release\netcoreapp3.1\BE.dll
+D:\Users\PGSHCO\source\repos\product (easy learn)\DAL\bin\Release\netcoreapp3.1\BE.pdb
+D:\Users\PGSHCO\source\repos\product (easy learn)\DAL\obj\Release\netcoreapp3.1\DAL.csprojAssemblyReference.cache
+D:\Users\PGSHCO\source\repos\product (easy learn)\DAL\obj\Release\netcoreapp3.1\DAL.AssemblyInfoInputs.cache
+D:\Users\PGSHCO\source\repos\product (easy learn)\DAL\obj\Release\netcoreapp3.1\DAL.AssemblyInfo.cs
+D:\Users\PGSHCO\source\repos\product (easy learn)\DAL\obj\Release\netcoreapp3.1\DAL.csproj.CoreCompileInputs.cache
+D:\Users\PGSHCO\source\repos\product (easy learn)\DAL\obj\Release\netcoreapp3.1\DAL.csproj.CopyComplete
+D:\Users\PGSHCO\source\repos\product (easy learn)\DAL\obj\Release\netcoreapp3.1\DAL.dll
+D:\Users\PGSHCO\source\repos\product (easy learn)\DAL\obj\Release\netcoreapp3.1\DAL.pdb
+D:\Users\PGSHCO\source\repos\product (easy learn)\DAL\obj\Release\netcoreapp3.1\DAL.genruntimeconfig.cache
